@@ -31,8 +31,8 @@
       ],
       "build-commands": [
         "install -Dm644 ROTA.pck ${FLATPAK_DEST}/bin/godot-runner.pck",
-        "install -Dm644 export/flatpak/launcher.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop",
-        "install -Dm644 export/flatpak/metainfo.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml",
+        "install -Dm644 flatpak/launcher.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop",
+        "install -Dm644 flatpak/metainfo.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml",
         "install -Dm644 media/image/icon/icon256.png ${FLATPAK_DEST}/share/icons/hicolor/256x256/apps/${FLATPAK_ID}.png"
       ]
     }
