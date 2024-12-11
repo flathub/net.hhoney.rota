@@ -20,16 +20,17 @@
         {
           "type": "git",
           "url": "https://github.com/HarmonyHoney/ROTA.git",
+          "tag": "flathub3",
           "commit": "be542fa2444774fe952ecb22d5056a048399bc25"
         },
         {
           "type": "file",
-          "url": "https://github.com/HarmonyHoney/ROTA/releases/download/Flathub/rota-linux.pck",
-          "sha256": "be8d360457c89895093d6799ab4e1d3944a7a9612faccd18f02b48bbc7694b58"
+          "url": "https://github.com/HarmonyHoney/ROTA/releases/download/flathub3/ROTA.pck",
+          "sha256": "fc7849b61e32c6ff6d8a8c4b31225c396ca845ee220436f75f665d60698c59a6"
         }
       ],
       "build-commands": [
-        "install -Dm644 rota-linux.pck ${FLATPAK_DEST}/bin/godot-runner.pck",
+        "install -Dm644 ROTA.pck ${FLATPAK_DEST}/bin/godot-runner.pck",
         "install -Dm644 export/flatpak/launcher.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop",
         "install -Dm644 export/flatpak/metainfo.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml",
         "install -Dm644 media/image/icon/icon256.png ${FLATPAK_DEST}/share/icons/hicolor/256x256/apps/${FLATPAK_ID}.png"
