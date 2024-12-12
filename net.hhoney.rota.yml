@@ -1,0 +1,37 @@
+id: net.hhoney.rota
+runtime: org.freedesktop.Platform
+runtime-version: '24.08'
+base: org.godotengine.godot.BaseApp
+base-version: '3.6'
+sdk: org.freedesktop.Sdk
+command: godot-runner
+finish-args:
+- --share=ipc
+- --socket=x11
+- --socket=pulseaudio
+- --device=all
+modules:
+- name: rota
+  buildsystem: simple
+  sources:
+
+  - type: git
+    url: https://github.com/HarmonyHoney/ROTA.git
+    tag: flathub3
+    commit: f5c713f307f24548b1cfbac800157e28bed05148
+
+  - type: file
+    url: https://github.com/HarmonyHoney/ROTA/releases/download/flathub3/ROTA.pck
+    sha256: fc7849b61e32c6ff6d8a8c4b31225c396ca845ee220436f75f665d60698c59a6
+
+  # Explicitly grab this commit because it's up-to-date compared to the relese notes in the release tag
+  - type: file
+    url: https://raw.githubusercontent.com/HarmonyHoney/ROTA/a8254c80f8f4207f6ca0e401cf9a5262193bbc6a/flatpak/metainfo.xml
+    sha256: eb8ab4eeb5bf11318aaff4332018d35a938e13062f2d978e2043917b662cbfdb
+
+  build-commands:
+  - install -Dm644 ROTA.pck ${FLATPAK_DEST}/bin/godot-runner.pck
+  - install -Dm644 flatpak/launcher.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
+  - install -Dm644 media/image/icon/icon256.png ${FLATPAK_DEST}/share/icons/hicolor/256x256/apps/${FLATPAK_ID}.png
+  # In the current directory due to the explicit file download
+  - install -Dm644 metainfo.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml
