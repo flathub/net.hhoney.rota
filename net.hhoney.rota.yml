@@ -17,11 +17,12 @@ modules:
 
   - type: git
     url: https://github.com/HarmonyHoney/ROTA.git
-    commit: b9b2eaaa9c788df321471aadd402b0c9397ac5d4
+    tag: 2025.02.23
+    commit: 39515478021f22f3833c0c0c6cad664c4b392e24
 
   - type: file
-    url: https://github.com/HarmonyHoney/ROTA/releases/download/flathub3/ROTA.pck
-    sha256: fc7849b61e32c6ff6d8a8c4b31225c396ca845ee220436f75f665d60698c59a6
+    url: https://github.com/HarmonyHoney/ROTA/releases/download/2025.02.23/rota-linux.pck
+    sha256: d1852124fd8e02eab06c9aada404ffb484521234e2beb61489eee7768b959ac5
 
   build-commands:
   - install -Dm644 ROTA.pck ${FLATPAK_DEST}/bin/godot-runner.pck
