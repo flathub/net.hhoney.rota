@@ -17,7 +17,7 @@ modules:
 
   - type: git
     url: https://github.com/HarmonyHoney/ROTA.git
-    commit: 309484dcb72bb9969a4eb894d5edf4da69b13417
+    commit: b9b2eaaa9c788df321471aadd402b0c9397ac5d4
 
   - type: file
     url: https://github.com/HarmonyHoney/ROTA/releases/download/flathub3/ROTA.pck
@@ -27,4 +27,5 @@ modules:
   - install -Dm644 ROTA.pck ${FLATPAK_DEST}/bin/godot-runner.pck
   - install -Dm644 linux/${FLATPAK_ID}.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
   - install -Dm644 linux/${FLATPAK_ID}.metainfo.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml
-  - install -Dm644 media/image/icon/icon256.png ${FLATPAK_DEST}/share/icons/hicolor/256x256/apps/${FLATPAK_ID}.png
+  - install -Dm644 linux/${FLATPAK_ID}.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg
+  - install -Dm644 linux/${FLATPAK_ID}-symbolic.svg ${FLATPAK_DEST}/share/icons/hicolor/symbolic/apps/${FLATPAK_ID}-symbolic.svg
