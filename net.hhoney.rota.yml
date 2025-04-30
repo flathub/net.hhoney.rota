@@ -23,9 +23,10 @@ modules:
   - type: file
     url: https://github.com/HarmonyHoney/ROTA/releases/download/2025.04.29/ROTA.pck
     sha256: 3742e02ae04a4f022cc5b3c364c2de245a6e2148eb712214701ff8a4949781e8
+    dest-filename: godot-runner.pck
 
   build-commands:
-  - install -Dm644 rota-linux.pck ${FLATPAK_DEST}/bin/godot-runner.pck
+  - install -Dm644 godot-runner.pck ${FLATPAK_DEST}/bin/godot-runner.pck
   - install -Dm644 linux/${FLATPAK_ID}.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
   - install -Dm644 linux/${FLATPAK_ID}.metainfo.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml
   - install -Dm644 linux/${FLATPAK_ID}.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg
