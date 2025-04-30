@@ -24,6 +24,12 @@ modules:
     url: https://github.com/HarmonyHoney/ROTA/releases/download/2025.04.29/ROTA.pck
     sha256: 3742e02ae04a4f022cc5b3c364c2de245a6e2148eb712214701ff8a4949781e8
     dest-filename: godot-runner.pck
+    x-checker-data:
+      type: json
+      url: https://api.github.com/repos/HarmonyHoney/ROTA/releases/latest
+      version-query: .tag_name
+      url-query: '"https://github.com/HarmonyHoney/ROTA/releases/download/"
+        + $version + "/rota-ci-" + $version + ".pck"'
 
   build-commands:
   - install -Dm644 godot-runner.pck ${FLATPAK_DEST}/bin/godot-runner.pck
