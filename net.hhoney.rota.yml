@@ -6,34 +6,34 @@ base-version: '3.6'
 sdk: org.freedesktop.Sdk
 command: godot-runner
 finish-args:
-- --share=ipc
-- --socket=x11
-- --socket=pulseaudio
-- --device=all
+  - --share=ipc
+  - --socket=x11
+  - --socket=pulseaudio
+  - --device=all
 modules:
-- name: rota
-  buildsystem: simple
-  sources:
+  - name: rota
+    buildsystem: simple
+    sources:
 
-  - type: git
-    url: https://github.com/HarmonyHoney/ROTA.git
-    tag: 2025.04.29
-    commit: 8f6332ebf106bcad135c7ee8fbb8c0b2f886d21f
+      - type: git
+        url: https://github.com/HarmonyHoney/ROTA.git
+        tag: 2025.04.29
+        commit: 8f6332ebf106bcad135c7ee8fbb8c0b2f886d21f
 
-  - type: file
-    url: https://github.com/HarmonyHoney/ROTA/releases/download/2025.04.29/ROTA.pck
-    sha256: 3742e02ae04a4f022cc5b3c364c2de245a6e2148eb712214701ff8a4949781e8
-    dest-filename: godot-runner.pck
-    x-checker-data:
-      type: json
-      url: https://api.github.com/repos/HarmonyHoney/ROTA/releases/latest
-      version-query: .tag_name
-      url-query: '"https://github.com/HarmonyHoney/ROTA/releases/download/"
-        + $version + "/rota-ci-" + $version + ".pck"'
+      - type: file
+        url: https://github.com/HarmonyHoney/ROTA/releases/download/2025.04.30/rota-ci-2025.04.30.pck
+        sha256: 570c7030e170e888c6b359fb365efe076cb09000dfa7c223954cd8f1b4dab6bc
+        dest-filename: godot-runner.pck
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/HarmonyHoney/ROTA/releases/latest
+          version-query: .tag_name
+          url-query: '"https://github.com/HarmonyHoney/ROTA/releases/download/" +
+            $version + "/rota-ci-" + $version + ".pck"'
 
-  build-commands:
-  - install -Dm644 godot-runner.pck ${FLATPAK_DEST}/bin/godot-runner.pck
-  - install -Dm644 linux/${FLATPAK_ID}.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
-  - install -Dm644 linux/${FLATPAK_ID}.metainfo.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml
-  - install -Dm644 linux/${FLATPAK_ID}.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg
-  - install -Dm644 linux/${FLATPAK_ID}-symbolic.svg ${FLATPAK_DEST}/share/icons/hicolor/symbolic/apps/${FLATPAK_ID}-symbolic.svg
+    build-commands:
+      - install -Dm644 godot-runner.pck ${FLATPAK_DEST}/bin/godot-runner.pck
+      - install -Dm644 linux/${FLATPAK_ID}.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
+      - install -Dm644 linux/${FLATPAK_ID}.metainfo.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml
+      - install -Dm644 linux/${FLATPAK_ID}.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg
+      - install -Dm644 linux/${FLATPAK_ID}-symbolic.svg ${FLATPAK_DEST}/share/icons/hicolor/symbolic/apps/${FLATPAK_ID}-symbolic.svg
