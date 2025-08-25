@@ -26,7 +26,7 @@ modules:
         
       - type: file
         url: https://github.com/HarmonyHoney/ROTA/releases/download/2025.08.18/rota-ci-2025.08.18.pck
-        sha256: sha256:c069c2676264ae5a359ee3a5c477185fc5a8858e9247899a6ee550a9c22b311f
+        sha256: c069c2676264ae5a359ee3a5c477185fc5a8858e9247899a6ee550a9c22b311f
         dest-filename: godot-runner.pck
         x-checker-data:
           type: json
