@@ -17,16 +17,16 @@ modules:
 
       - type: git
         url: https://github.com/HarmonyHoney/ROTA.git
-        tag: 2025.08.18
-        commit: f1bcdd88ed5a0e124babbccbc574245b482a9936
+        tag: 2026.03.12
+        commit: a9b33ac127d4e8f1e965a483172561f8b8baaced
         x-checker-data:
           type: json
           url: https://api.github.com/repos/HarmonyHoney/ROTA/releases/latest
           tag-query: .tag_name
-        
+
       - type: file
-        url: https://github.com/HarmonyHoney/ROTA/releases/download/2025.08.18/rota-ci-2025.08.18.pck
-        sha256: c069c2676264ae5a359ee3a5c477185fc5a8858e9247899a6ee550a9c22b311f
+        url: https://github.com/HarmonyHoney/ROTA/releases/download/2026.03.12/rota-ci-2026.03.12.pck
+        sha256: c5ce39dbe3328072be3b83ac7e3cf2df3bdb0706ef4317f948c1f8897aea4921
         dest-filename: godot-runner.pck
         x-checker-data:
           type: json
